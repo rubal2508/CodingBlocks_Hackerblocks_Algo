@@ -180,7 +180,7 @@ public:
 
     }
 
-    bool isCyclicBFS(T src){
+    bool isCyclicBFS(T src){ // for undirected graph
         queue<T> q;
         map<T, bool> visited;
         map<T,T> parent;
@@ -206,14 +206,12 @@ public:
         return false;
     }
 
-    bool isCyclicHelper(T node, map <T, bool> &visited, map <T, bool> &inStack){
+    bool isCyclicHelper(T node, map <T, bool> &visited, map <T, bool> &inStack){ //directed graph
         visited[node] = true;
         inStack[node] = true;
 
-        bool result = false;
-
         for(auto neighbour : adjList[node]){
-            else if((!visited[neighbour] && isCyclicHelper(neighbour,visited, inStack)) || inStack[neighbour]) {
+            if(  (!visited[neighbour] && isCyclicHelper(neighbour,visited, inStack)) || inStack[neighbour] ) {
                 return true;
             }
         }

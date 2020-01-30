@@ -70,6 +70,38 @@ public:
             else cout << dist[i] << " ";
         }
     }
+
+    // void dijkstra(T src){
+    //     unordered_map<T,int> dis;
+    //     set<pair<int,T> > s;
+    //
+    //     for(auto i : adjList){
+    //         dis[i.first] = INT_MAX;
+    //     }
+    //
+    //     dis[src] = 0;
+    //     s.insert(make_pair(0,src));
+    //
+    //     while(!s.empty()){
+    //         T node = *(s.begin()).second;
+    //         int d =  *(s.begin()).first;
+    //         s.erase(s.begin());
+    //
+    //         for(auto p : adjList[node]){
+    //             T n = p.first;
+    //             int w = p.second;
+    //             if(dis[n] > dis[node] + w){
+    //                 auto i = s.find(make_pair(dis[n],n));
+    //                 if(i != s.end()){
+    //                     s.erase(i);
+    //                 }
+    //                 dis[n] = dis[node] + w;
+    //                 s.insert(make_pair(dis[n],n));
+    //             }
+    //         }
+    //     }
+    // }
+
 };
 
 
